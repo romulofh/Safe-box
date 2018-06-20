@@ -4,10 +4,11 @@
 
     <% @accounts.each do |account| %>
         <div class="card">
-        <h5 class="card-header">Conta</h5>
+        <h3 class="card-header">Conta</h3>
         <div class="card-body">
             <h5 class="card-title">Número: <%= account.number %></h5>
-            <p class="card-text">Agência: Bradesco</p>
+            <p class="card-text">Agência: <%= account.agency %> </p>
+            <p class="card-text">Tipo: <%= account.type %> </p>
             <a href="#" class="btn btn-success">Entrada</a>
             <a href="#" class="btn btn-danger">Saída</a>
         </div>
