@@ -1,0 +1,17 @@
+<h1>Minhas Contas</h1>
+
+<body>
+
+    <% @accounts.each do |account| %>
+        <div class="card">
+        <h5 class="card-header">Conta</h5>
+        <div class="card-body">
+            <h5 class="card-title">Número: <%= account.number %></h5>
+            <p class="card-text">Agência: Bradesco</p>
+            <a href="#" class="btn btn-success">Entrada</a>
+            <a href="#" class="btn btn-danger">Saída</a>
+        </div>
+        </div></br>
+    <% end %>
+
+</body>

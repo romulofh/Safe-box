@@ -1,0 +1,13 @@
+<h1>Cadastre sua conta</h1>
+
+<div class="panel-body">
+
+<%= form_for @account do |f| %>
+    <div class="form-group">
+        <%= f.label :number %>
+        <%= f.text_field :number, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+</div>
