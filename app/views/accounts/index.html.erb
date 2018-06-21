@@ -9,10 +9,40 @@
             <h5 class="card-title">Número: <%= account.number %></h5>
             <p class="card-text">Agência: <%= account.agency %> </p>
             <p class="card-text">Tipo: <%= account.type %> </p>
-            <a href="#" class="btn btn-success">Entrada</a>
-            <a href="#" class="btn btn-danger">Saída</a>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                Depósito
+            </button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+                Saque
+            </button>
         </div>
         </div></br>
     <% end %>
+
+    <!-- MODAL DEPÓSITO -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalCenterTitle">Depósito</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">0.00</span>
+                </div>
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Finalizar Operação</button>
+            </div>
+            </div>
+    </div>
+</div>
 
 </body>
