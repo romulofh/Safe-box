@@ -18,6 +18,11 @@
         <%= f.select :account_type, ['Conta Corrente', 'Poupança'], {}, class: 'form-control' %>
     </div></br>
 
+    <div class="form-group">
+        <%= f.label :balance %>
+        <%= f.number_field :balance, class: 'form-control', :step => "0.01" %>
+    </div>
+
     <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 </div>

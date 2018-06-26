@@ -18,8 +18,16 @@ class AccountsController < ApplicationController
         @accounts = Account.all
     end
 
+    def deposito
+        @account.balance = @account.balance + @account.value_op
+    end
+
+    def saque
+        @account.balance = @account.balance - @account.value_op
+    end
+
     private
     def account_params
-        params.require(:account).permit(:number, :agency, :account_type)
+        params.require(:account).permit(:number, :agency, :account_type, :balance)
     end
 end
