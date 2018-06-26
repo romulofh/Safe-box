@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
 
     def create
         @account = Account.new(account_params)
+        @account.user = current_user
         if @account.save
             flash[:notice] = "Conta criada com sucesso"
             redirect_to accounts_path

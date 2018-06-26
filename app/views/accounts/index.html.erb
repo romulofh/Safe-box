@@ -3,20 +3,23 @@
 <body>
 
     <% @accounts.each do |account| %>
-        <div class="card">
-        <h3 class="card-header">Conta</h3>
-        <div class="card-body">
-            <h5 class="card-title">Número: <%= account.number %></h5>
-            <p class="card-text">Agência: <%= account.agency %> </p>
-            <p class="card-text">Tipo: <%= account.account_type %> </p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-                Depósito
-            </button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-                Saque
-            </button>
-        </div>
-        </div></br>
+        <% if current_user.id == account.user_id %>
+            <div class="card">
+            <h3 class="card-header">Conta</h3>
+            <div class="card-body">
+                <h5 class="card-title">Número: <%= account.number %></h5>
+                <p class="card-text">Agência: <%= account.agency %> </p>
+                <p class="card-text">Tipo: <%= account.account_type %> </p>
+                <p class="card-text">Titular: <%= account.user.first_name %> <%= account.user.last_name %></p>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                    Depósito
+                </button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+                    Saque
+                </button>
+            </div>
+            </div></br>
+        <% end %>
     <% end %>
 
     <!-- MODAL DEPÓSITO -->
