@@ -4,20 +4,19 @@
 
     <% @accounts.each do |account| %>
         <% if current_user.id == account.user_id %>
-            <div class="card">
-            <h3 class="card-header">Conta</h3>
-            <div class="card-body">
-                <h5 class="card-title">Número: <%= account.number %></h5>
-                <p class="card-text">Agência: <%= account.agency %> </p>
-                <p class="card-text">Tipo: <%= account.account_type %> </p>
-                <p class="card-text">Saldo: R$ <%= account.balance %> </p>
-                <p class="card-text">Titular: <%= account.user.first_name %> <%= account.user.last_name %></p>
+            <div class="card-custom">
+            
+            <div class="card-body padding-custom">
+                <h5 class="card-title"><b>Número:</b> <%= account.number %></h5>
+                <p class="card-text"><b>Agência:</b> <%= account.agency %> </p>
+                <p class="card-text"><b>Saldo:</b> R$ <%= account.balance %> </p>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
                     Depósito
                 </button>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
                     Saque
                 </button>
+                <%= link_to "Detalhes", account_path(account), :class=>"btn btn-primary" %>
             </div>
             </div></br>
         <% end %>

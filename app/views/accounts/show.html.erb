@@ -1,0 +1,11 @@
+<h1 align="center">Minha Conta</h1>
+
+<div class="card-custom">
+    <div class="padding-custom">
+        <h5 class="card-title"><b>Número:</b> <%= @account.number %></h5>
+        <p class="card-text"><b>Agência:</b> <%= @account.agency %> </p>
+        <p class="card-text"><b>Tipo:</b> <%= @account.account_type %> </p>
+        <p class="card-text"><b>Titular:</b> <%= @account.user.first_name %> <%= @account.user.last_name %></p>
+        <p class="card-text"><b>Saldo:</b> R$ <%= @account.balance %> </p>
+    </div>
+</div></br>
